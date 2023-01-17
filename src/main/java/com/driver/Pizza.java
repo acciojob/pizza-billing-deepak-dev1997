@@ -8,7 +8,7 @@ public class Pizza {
 
     private boolean cheese=false;
 
-    private boolean takeaway=false;
+    private int takeaway=0;
 
     private boolean extratopping=false;
 
@@ -50,10 +50,10 @@ public class Pizza {
     }
 
     public void addTakeaway(){
-        if(takeaway==false) {
+
             this.price += 20;
-            takeaway=true;
-        }
+            takeaway+=20;
+
 
     }
 
@@ -70,8 +70,8 @@ public class Pizza {
         if(extratopping==true){
             this.bill+="Extra Toppings Added: 120"+"\n";
         }
-        if(takeaway==true){
-            this.bill+="Paperbag Added: 20"+"\n";
+        if(takeaway>0){
+            this.bill+="Paperbag Added: "+Integer.toString(this.takeaway)+"\n";
         }
         this.bill+="Total Price: "+Integer.toString(this.price)+"\n";
 
